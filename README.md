@@ -46,6 +46,24 @@ description of what the website is about. Users can browse the curent occupancy 
 
 
 ## Wireframes
+The wireframes below were generated using [Balsamic](https://balsamiq.com/wireframes/ "Balsamic"). 
+
+### [Navbar - Desktop and Phone](docs/wireframes/navbar.png "Navbar wireframe")
+### [Footer - Desktop and Phone](docs/wireframes/footer-desktop-and-phone.png "Footer wireframe")
+### [Home - Desktop - Not signed in](docs/wireframes/home-desktop-not-signed-in.png "Home Desktop not signed in wireframe")
+### [Home - Desktop - Signed in](docs/wireframes/home-desktop-signed-in.png "Home Desktop signed in wireframe")
+### [Home - Phone](docs/wireframes/home-phone.png "Home Phone wireframe")
+### [Animal Detail View - Desktop](docs/wireframes/detail-view-desktop.png "View Animal Detail Desktop wireframe")
+### [Animal Detail View - Phone](docs/wireframes/detail-view-phone.png "View Animal Detail Phone wireframe") 
+### [Register](docs/wireframes/register.png "Registration wireframe")
+### [Sign-In](docs/wireframes/sign-in.png "Sign IN wireframe")
+### [Offers - Desktop](docs/wireframes/offers-desktop.png "Offers wireframe")
+### [Add Offer - Desktop](docs/wireframes/add-offer-desktop.png "Add Offer - Desktop wireframe")
+### [Add Offer - Phone](docs/wireframes/add-offer-phone.png "Add Offer - Phone wireframe")     
+### Django Administration Screens
+#### [Animal](docs/wireframes/django-adimistration-animal.png "Animal wireframe")
+#### [Offer](docs/wireframes/django-administration-offer.png "Offer wireframe")
+&nbsp;  
 
 ## Features 
 
