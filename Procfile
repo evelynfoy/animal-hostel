@@ -1,1 +1,1 @@
-web: gunicorn animal-hostel.wsgi
+web: gunicorn animalhostel.wsgi
