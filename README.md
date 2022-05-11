@@ -41,7 +41,7 @@ description of what the website is about. Users can browse the curent occupancy 
 * Delete my offers: As a Site User I can delete my offers so that I can resend my offer.
 
 * Manage guest list: As a Site Admin I can add, view, update and delete animals so that I can maintain the list.
-* Manage animal type list: As a Site Admin I can add, view, update and delete animal types so that I can maintain them.
+* Manage category list: As a Site Admin I can add, view, update and delete categories so that I can maintain them.
 * Approve offers: As a Site Admin I can approve or reject offers so that I can find the right home for each guest.
 
 
