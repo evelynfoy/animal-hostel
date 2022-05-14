@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<a id="guests"><h1 class="text-center">Honored Guests</h1></a>
+
+<div class="container-fluid">
+
+    <div class="row">
+
+        <!-- Guest Entries Column -->
+        <div class="col-12 mt-3 left">
+            <div class="row">
+            {% for animal in animal_list %}
+                <div class="col-md-4 col-lg-3">
+                    <div class="card mb-4" >
+                        <div class="card-body">
+                            <div class="image-container">
+                                {% if "placeholder" in animal.featured_image.url %}
+                                <img  class="card-img-top" 
+                                    src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
+                                {% else %}
+                                <img  class="card-img-top" src="{{ animal.image.url }}">
+                                {% endif %}
+                                <div class="image-flash">
+                                    <p class="animal">{{ animal.name }} - {{ animal.type }}</p>
+                                </div>
+                            </div>
+                            
+                            <hr />
+                            <p class="card-text text-muted h6">{{ animal.slogan }}</p>
+
+                        </div>
+                    </div>
+                </div>
+
+            {% if forloop.counter|divisibleby:4 %}
+            </div>
+            <div class="row">
+            {% endif %}
+            {% endfor %}
+
+            </div>
+        </div>
+    </div>
+    {% if is_paginated %}
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-context-center">
+            {% if page_obj.has_previous %}
+            <li><a href="?page={{page_obj.previous_page_number }} " class="page-link">&laquo; PREVIOUS</a></li>
+            {% endif %}
+            {% if page_obj.has_next  %}
+            <li><a href="?page={{page_obj.next_page_number }} " class="page-link">NEXT &laquo;</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+
+</div>
+
+{%endblock%}
