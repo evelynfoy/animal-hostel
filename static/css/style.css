@@ -1,16 +1,20 @@
 :root {
     --orange: #e66933;
+    --dark-grey: #445261;
+    --light-grey: #F9FAFC;
+    --white: #fff;
+
 }
 
 body {
-    background-color: #F9FAFC;
+    background-color: var(--light-grey);
 }
 
 .brand {
     font-family: Lato, sans-serif;
     font-size: 2rem;
     font-weight: 700;
-    color: #4A4A4F;
+    color: var(--dark-grey);
 }
 
 .orange-font {
@@ -26,15 +30,15 @@ body {
 }
 
 .light-bg {
-    background-color: #fff;
+    background-color: var(--white) ;
 }
 
 .dark-bg {
-    background-color: #445261;
+    background-color: var(--dark-grey);
 }
 
 .main-bg {
-    background-color: #F9FAFC;
+    background-color: var(--light-grey);
 }
 
 .card {
@@ -61,7 +65,7 @@ body {
 }
 
 .animal {
-    color: white;
+    color: var(--white);
     margin: 4px;
     text-transform: uppercase;
 }
@@ -76,8 +80,8 @@ body {
 }
 
 .masthead-text {
-    background-color: #445261;
-    color: white;
+    background-color: var(--dark-grey);
+    color: var(--white);
     position: relative;
 }
 
@@ -93,64 +97,37 @@ body {
     right: 90%;
     height: 100%;
     width: 150%;
-    background: #445261;
+    background: var(--dark-grey);
     -webkit-transform: skew(15deg);
     -moz-transform: skew(15deg);
     transform: skew(15deg);
     z-index: 100;
 }
 
-.post-link {
-    text-decoration: none;
-    color: #445261;
-}
-
-.post-link:hover,
 .page-link {
-    color: #E84610;
-}
-
-.post-title {
-    margin-top: 20%;
-    margin-left: 5%;
-}
-
-.post-subtitle {
-    margin-left: 5%;
-    color: lightgray;
+    color: var(--orange);
 }
 
 .btn-signup {
-    background-color: #23BBBB;
-    color: #fff;
+    background-color: var(--orange);
+    color: var(--white);
 }
 
 .btn-signup:hover,
 .btn-signup:active {
-    background-color: #fff;
-    color: #23BBBB;
+    background-color: var(--white);
+    color: var(--orange);
+    border-color: var(--orange);
 }
 
 .link {
-    color: #23BBBB;
+    color: var(--orange);
     text-decoration: none;
 }
 
 .link:hover,
 .link:active {
-    color: #445261;
+    color: var(--orange);
     text-decoration: underline;
-}
-
-.btn-like {
-    color: #E84610;
-    border: none;
-    background: transparent;
-}
-
-.btn-like:hover,
-.btn-like:active {
-    color: #E84610;
-    background: transparent;
-    border: none;
+    font-weight: bold;
 }
