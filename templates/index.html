@@ -2,9 +2,9 @@
 
 {% block content %}
 
-<a id="guests"><h1 class="text-center">Honored Guests</h1></a>
-
 <div class="container-fluid">
+
+    <a id="guests"><h1 class="text-center">Honored Guests</h1></a>
 
     <div class="row">
 
@@ -56,6 +56,16 @@
     </nav>
     {% endif %}
 
+    <div class="row text-center mt-5 mb-5">
+        <scan>Want to take me home? Click  
+            {% if user.is_authenticated %}
+            <a class="link" href="#">here</a> to make an offer.
+            {% else %}
+            <a class="link" href="accounts/signup">here</a> to register.
+            {% endif %}
+        </scan>
+    </div>
+    
 </div>
 
 {%endblock%}
