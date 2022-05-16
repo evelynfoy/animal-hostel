@@ -4,41 +4,44 @@
 
 <div class="container-fluid">
 
-    <a id="guests"><h1 class="text-center">Honored Guests</h1></a>
+    <a id="guests">
+        <h1 class="text-center">Honored Guests</h1>
+    </a>
 
     <div class="row">
 
         <!-- Guest Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
-            {% for animal in animal_list %}
+                {% for animal in animal_list %}
                 <div class="col-md-4 col-lg-3">
-                    <div class="card mb-4" >
+                    <div class="card mb-4">
                         <div class="card-body">
-                            <div class="image-container">
-                                {% if "placeholder" in animal.featured_image.url %}
-                                <img  class="card-img-top" 
-                                    src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
-                                {% else %}
-                                <img  class="card-img-top" src="{{ animal.image.url }}">
-                                {% endif %}
-                                <div class="image-flash">
-                                    <p class="animal">{{ animal.name }} - {{ animal.type }}</p>
+                            <a href=" {% url 'guest_detail' animal.slug %}" class="guest-link">
+                                <div class="image-container">
+                                    {% if "placeholder" in animal.featured_image.url %}
+                                    <img class="card-img-top"
+                                        src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
+                                    {% else %}
+                                    <img class="card-img-top" src="{{ animal.image.url }}">
+                                    {% endif %}
+                                    <div class="image-flash">
+                                        <p class="animal">{{ animal.name }} - {{ animal.type }}</p>
+                                    </div>
                                 </div>
-                            </div>
                             
-                            <hr />
-                            <p class="card-text text-muted h6">{{ animal.slogan }}</p>
-
+                                <hr />
+                                <p class="card-text text-muted h6">{{ animal.slogan }}</p>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-            {% if forloop.counter|divisibleby:4 %}
+                {% if forloop.counter|divisibleby:4 %}
             </div>
             <div class="row">
-            {% endif %}
-            {% endfor %}
+                {% endif %}
+                {% endfor %}
 
             </div>
         </div>
@@ -57,7 +60,7 @@
     {% endif %}
 
     <div class="row text-center mt-5 mb-5">
-        <scan>Want to take me home? Click  
+        <scan>Want to take me home? Click
             {% if user.is_authenticated %}
             <a class="link" href="#">here</a> to make an offer.
             {% else %}
@@ -65,7 +68,7 @@
             {% endif %}
         </scan>
     </div>
-    
+
 </div>
 
 {%endblock%}
