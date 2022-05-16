@@ -1,0 +1,51 @@
+{% extends 'base.html' %} {% block content %}
+<!-- {% load crispy_forms_tags %} -->
+
+<div class="masthead">
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-md-6 masthead-text">
+                <h1 class="guest-name">{{ guest.name }} </h1>
+                <p class="guest-slogan"> {{ guest.slogan }} </p>
+            </div>
+            <div class="col-md-6 masthead-image">
+                {% if "placeholder" in animal.image.url %}
+                <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" width="100%">
+                {% else %}
+                <img src="{{ guest.image.url  }} " width="100%">
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col card mb-4  mt-3 left  top">
+            <div class="card-body">
+                <!-- The guest content goes inside the card-text. -->
+                <!-- Use the | safe filter inside the template tags -->
+                <p class="card-text ">
+                    {{ guest.description | safe }}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row text-center mt-5 mb-5">
+    <div class="col-12 col-sm-6 text-sm-end">
+        <scan class="text-sm-right">Want to take me home?</scan>
+    </div>
+    <div class="col-12 col-sm-6 text-sm-start">
+        <scan>Click
+            {% if user.is_authenticated %}
+            <a class="link" href="#">here</a> to make an offer.
+            {% else %}
+            <a class="link" href="accounts/signup">here</a> to register.
+            {% endif %}
+        </scan>
+    </div>
+</div>
+
+{% endblock content %}

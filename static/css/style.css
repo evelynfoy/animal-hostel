@@ -80,8 +80,8 @@ body {
 }
 
 .masthead-text {
-    background-color: var(--dark-grey);
-    color: var(--white);
+    background-color: #445261;
+    color: white;
     position: relative;
 }
 
@@ -97,7 +97,7 @@ body {
     right: 90%;
     height: 100%;
     width: 150%;
-    background: var(--dark-grey);
+    background: #445261;
     -webkit-transform: skew(15deg);
     -moz-transform: skew(15deg);
     transform: skew(15deg);
@@ -106,6 +106,26 @@ body {
 
 .page-link {
     color: var(--orange);
+}
+
+.guest-link {
+    text-decoration: none;
+    color: #445261;
+}
+
+.guest-link:hover,
+.page-link {
+    color: #E84610;
+}
+
+.guest-name {
+    margin-top: 20%;
+    margin-left: 5%;
+}
+
+.guest-slogan {
+    margin-left: 5%;
+    color: lightgray;
 }
 
 .btn-signup {
