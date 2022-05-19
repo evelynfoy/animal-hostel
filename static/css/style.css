@@ -64,7 +64,7 @@ body {
     background-color: var(--orange);
 }
 
-.animal {
+.guest {
     color: var(--white);
     margin: 4px;
     text-transform: uppercase;
@@ -150,4 +150,35 @@ body {
     color: var(--orange);
     text-decoration: underline;
     font-weight: bold;
+}
+
+
+/* -- Carousel Styling -- */
+
+/* Make the image fully responsive */
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+
+.carousel .carousel-item {
+  height: 40vh;
+}
+
+.carousel-item img {
+    position: absolute;
+    object-fit:cover;
+    top: 0;
+    left: 0;
+    min-height: 60vh;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: var(--orange);
+}
+
+.carousel-indicators {
+    background-color: var(--orange);
+    width: 10vw;
+    margin-left: 45%;
 }

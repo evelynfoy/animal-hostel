@@ -2,36 +2,90 @@
 
 {% block content %}
 
-<div class="container-fluid">
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div id="demo" class="carousel slide" data-bs-ride="carousel">
 
-    <a id="guests">
-        <h1 class="text-center">Honored Guests</h1>
-    </a>
+                <!-- Indicators -->
+                <ul class="carousel-indicators">
+                    {% for guest in guest_list %}
+                    {% if forloop.first %}
+                    <li data-bs-target="#demo" data-bs-slide-to="0" class="active"></li>
+                    {% else %}
+                    <li data-bs-target="#demo" data-bs-slide-to="{{forloop.counter0}}"></li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+
+                <!-- The slideshow -->
+                <div class="carousel-inner">
+                    {% for guest in guest_list %}
+                    {% if forloop.first %}
+                    <div class="carousel-item active">
+                        {% if "placeholder" in guest.image.url %}
+                        <img src="https://res.cloudinary.com/efcloud12/image/upload/v1652774377/placeholder_osn1os.jpg">
+                        {% else %}
+                        <img src="{{ guest.image.url }}"
+                            alt="Image of Animal">
+                        {% endif %}
+                    </div>
+                    {% else %}
+                    <div class="carousel-item">
+                        {% if "placeholder" in guest.image.url %}
+                        <img src="https://res.cloudinary.com/efcloud12/image/upload/v1652774377/placeholder_osn1os.jpg">
+                        {% else %}
+                        <img src="{{ guest.image.url }}"
+                            alt="Image of Animal">
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="carousel-control-prev" href="#demo" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#demo" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+        
+    <div class="row">
+        <div class="col-12 mt">
+            <a id="guests">
+                <h1 class="text-center">Honored Guests</h1>
+            </a>
+        </div>
+    </div>
 
     <div class="row">
-
+        
         <!-- Guest Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
-                {% for animal in animal_list %}
+                {% for guest in guest_list %}
                 <div class="col-md-4 col-lg-3">
                     <div class="card mb-4">
                         <div class="card-body">
-                            <a href=" {% url 'guest_detail' animal.slug %}" class="guest-link">
+                            <a href=" {% url 'guest_detail' guest.slug %}" class="guest-link">
                                 <div class="image-container">
-                                    {% if "placeholder" in animal.featured_image.url %}
+                                    {% if "placeholder" in guest.image.url %}
                                     <img class="card-img-top"
-                                        src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
+                                        src="https://res.cloudinary.com/efcloud12/image/upload/v1652774377/placeholder_osn1os.jpg">
                                     {% else %}
-                                    <img class="card-img-top" src="{{ animal.image.url }}">
+                                    <img class="card-img-top" src="{{ guest.image.url }}">
                                     {% endif %}
                                     <div class="image-flash">
-                                        <p class="animal">{{ animal.name }} - {{ animal.type }}</p>
+                                        <p class="guest">{{ guest.name }} - {{ guest.type }}</p>
                                     </div>
                                 </div>
                             
                                 <hr />
-                                <p class="card-text text-muted h6">{{ animal.slogan }}</p>
+                                <p class="card-text text-muted h6">{{ guest.slogan }}</p>
                             </a>
                         </div>
                     </div>
@@ -46,6 +100,7 @@
             </div>
         </div>
     </div>
+
     {% if is_paginated %}
     <nav aria-label="Page navigation">
         <ul class="pagination justify-context-center">
@@ -72,3 +127,7 @@
 </div>
 
 {%endblock%}
+
+
+
+

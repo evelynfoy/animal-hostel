@@ -8,13 +8,16 @@ from .models import Animal
 
 class GuestList(View):
     ''' Guest List '''
-    template_name = 'index.html'
 
     def get(self, request):
         ''' Get view for displaying the Guests '''
-        animal = Animal.objects.order_by('name')
-        return render(request, self.template_name,
-                      {'animal_list': animal})
+        animals = Animal.objects.order_by('name')
+        return render(
+            request, 
+            "index.html",
+            {
+                "guest_list": animals,
+            })
 
 
 class GuestDetail(View):
@@ -26,8 +29,8 @@ class GuestDetail(View):
         guest = get_object_or_404(queryset, slug=slug)
         return render(
             request,
-            "guest_detail.html",
+            'guest_detail.html',
             {
-                "guest": guest,
+                'guest': guest,
             }
         )
