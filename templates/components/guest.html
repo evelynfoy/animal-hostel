@@ -1,0 +1,22 @@
+<div class="col-md-4 col-lg-3">
+    <div class="card mb-4">
+        <div class="card-body">
+            <a href=" {% url 'guest_detail' guest.slug %}" class="guest-link">
+                <div class="image-container">
+                    {% if "placeholder" in guest.image.url %}
+                    <img class="card-img-top"
+                        src="https://res.cloudinary.com/efcloud12/image/upload/v1652774377/placeholder_osn1os.jpg">
+                    {% else %}
+                    <img class="card-img-top" src="{{ guest.image.url }}">
+                    {% endif %}
+                    <div class="image-flash">
+                        <p class="guest">{{ guest.name }} - {{ guest.type }}</p>
+                    </div>
+                </div>
+            
+                <hr />
+                <p class="card-text text-muted h6">{{ guest.slogan }}</p>
+            </a>
+        </div>
+    </div>
+</div>
