@@ -15,7 +15,7 @@
                 </li>
                 {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link" href="#">My Offers</a>
+                    <a class="nav-link" href="{% url 'offers' %}">My Offers</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>

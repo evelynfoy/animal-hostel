@@ -1,7 +1,6 @@
 '''  Test Views '''
 from django.test import TestCase
 from .models import AnimalType, Animal
-from django.shortcuts import render, redirect, get_object_or_404
 
 
 class TestViews(TestCase):
@@ -20,12 +19,23 @@ class TestViews(TestCase):
 
     def test_guest_detail_view(self):
         ''' Test Display Guest Detail View'''
-        animal_type = AnimalType.objects.create(code='Cat',  description='Cat')
-        guest = Animal.objects.create(name='Test Guest', slug='test', type=animal_type, description='Test', slogan='Test')
-        print(guest.id)
-
-        response = self.client.get(f'guest_detail/{guest.slug}')
-        # # response = self.client.get(f'/guest_detail/{guest.id}')
+        animal_type = AnimalType.objects.create(code='Cat',
+                                                description='Cat')
+        guest = Animal.objects.create(name='Test Guest',
+                                      slug='test',
+                                      type=animal_type,
+                                      description='Test',
+                                      slogan='Test')
+        response = self.client.get(f'/guest/{guest.slug}/')
         self.assertEqual(response.status_code, 200)
-        
 
+    def test_offer_list(self):
+        ''' Test Display Offer List '''
+        response = self.client.get('/offers/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_offer_list_template(self):
+        ''' Test Display Offer List Template'''
+        response = self.client.get('/offers/')
+        self.assertTemplateUsed(response, 'offers.html')
+        self.assertTemplateUsed(response, 'base.html')
