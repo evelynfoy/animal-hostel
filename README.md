@@ -65,6 +65,11 @@ The wireframes below were generated using [Balsamic](https://balsamiq.com/wirefr
 #### [Offer](docs/wireframes/django-administration-offer.png "Offer wireframe")
 &nbsp;  
 
+## Entity Relationship Diagram
+This diagram was created using [SmartDraw](https://www.smartdraw.com/entity-relationship-diagram/er-diagram-tool.htm "SmartDraw"). 
+### [Models](docs/erd.jpg "Models")                       
+&nbsp;  
+
 ## Features 
 
 ### Existing Features

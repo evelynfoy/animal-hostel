@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-12 mt">
+            <a id="offers">
+                <h1 class="text-center">My Offers</h1>
+            </a>
+        </div>
+    </div>
+
+    <!-- Offers Column -->
+    <div class="row offers-list" >
+        <div class="col-4">
+            <div>
+                <p>Guest</p>
+            </div>
+        </div>
+        <div class="col-4">
+            <div>
+                <p>Basis</p>
+            </div>
+        </div>
+        <div class="col-4">
+            <div>
+                <p>Status</p>
+            </div>
+        </div>
+    </div>
+    <div>
+        {% for offer in offers %}
+        {% if offer.user == user %}
+        {% include "components/offer.html" %}
+        {% endif %}
+        {% endfor %}
+
+    </div>
+
+    <div class="row text-center mt-5 mb-5">
+        <div class="col-12">
+            <a class="btn btn-primary" href="#" role="button">Make an offer</a>
+        </div>
+    </div>
+
+</div>
+
+{%endblock%}
