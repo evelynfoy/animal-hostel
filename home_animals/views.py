@@ -14,7 +14,7 @@ class GuestList(View):
         animals = Animal.objects.order_by('name')
         return render(
             request,
-            "index.html",
+            "pages/index.html",
             {
                 "guest_list": animals
             }
@@ -30,7 +30,7 @@ class GuestDetail(View):
         guest = get_object_or_404(queryset, slug=slug)
         return render(
             request,
-            'guest_detail.html',
+            'pages/guest_detail.html',
             {
                 'guest': guest,
             }
@@ -46,7 +46,7 @@ class OffersList(View):
         # offer = get_object_or_404(queryset, slug=slug)
         return render(
             request,
-            'offers.html',
+            'pages/offers.html',
             {
                 'offers': offers,
             }
