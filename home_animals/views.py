@@ -1,9 +1,9 @@
 """ Views """
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.http import HttpResponseRedirect
 from django.views import View
 from .models import Animal, Offer
-# from .forms import GuestDetailForm
+from .forms import OfferForm
 
 
 class GuestList(View):
@@ -43,7 +43,6 @@ class OffersList(View):
 
     def get(self, request):
         offers = Offer.objects.order_by('slug')
-        # offer = get_object_or_404(queryset, slug=slug)
         return render(
             request,
             'pages/offers.html',
@@ -51,4 +50,32 @@ class OffersList(View):
                 'offers': offers,
             }
         )
+
+
+class OfferAdd(View):
+    """ Add Offer """
+    def get(self, request):
+        return render(
+            request,
+            'pages/offer_add.html',
+            {
+                "offer_form": OfferForm(),
+            }
+        )
+
+    def post(self, request, *args, **kwargs):
+        offer_form = OfferForm(data=request.POST)
+        user = request.user.username
+        id = request.POST.get('animal')
+        queryset = Animal.objects
+        guest = get_object_or_404(queryset, id=id)
+        slug = str(user) + "-" + guest.name
+        if offer_form.is_valid():
+            offer_form.instance.slug = slug
+            offer_form.instance.user = request.user
+            offer_form.instance.status = 'P'
+            offer_form.save()
+        else:
+            offer_form = OfferForm(data=request.POST)
+        return redirect('offers')
 
