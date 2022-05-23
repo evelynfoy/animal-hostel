@@ -1,6 +1,7 @@
 '''  Test Views '''
 from django.test import TestCase
-from .models import AnimalType, Animal
+from django.contrib.auth.models import User
+from .models import AnimalType, Animal, Offer
 
 
 class TestViews(TestCase):
@@ -50,3 +51,21 @@ class TestViews(TestCase):
         response = self.client.get('/offer/add/')
         self.assertTemplateUsed(response, 'pages/offer_add.html')
         self.assertTemplateUsed(response, 'base.html')
+
+    def test_can_add_offer(self):
+        ''' Test an offer can be added'''
+        animal_type = AnimalType.objects.create(code='Cat', description='Cat')
+        animal = Animal.objects.create(name='Smokey', slogan='Grey cat',
+                                       slug='smokey',
+                                       type=animal_type,
+                                       description='Smokey is a perfect gentleman of a cat.')
+        user = User.objects.create_user(username='tom',
+                                        email='tom@lyons.com',
+                                        password='tommy')
+        self.client.force_login(user=user)
+        response = self.client.post('/offer/add/',
+                                    {'animal': ['1'],
+                                     'pitch': ['fgdfh'],
+                                     'basis': ['A'],
+                                     'weeks': ['']})
+        self.assertRedirects(response, '/offers/')
