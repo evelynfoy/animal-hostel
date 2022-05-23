@@ -72,8 +72,6 @@ body {
     text-transform: uppercase;
 }
 
-
-
 .masthead-text {
     background-color: #445261;
     color: white;
@@ -106,9 +104,18 @@ body {
     color: lightgray;
 }
 
+/* -- Styling for My Offers page - default class used by crispy forms -- */
+
+.control-group {
+    margin-bottom: 1rem;
+}
+
 .btn-signup {
+    
     background-color: var(--orange);
     color: var(--white);
+    border-color:  var(--orange);
+    margin-top: 2rem;
 }
 
 .btn-signup:hover,
@@ -161,11 +168,14 @@ body {
     margin-left: 45%;
 }
 
+/* -- Styling for My Offers Page -- */
+
 .offers-list {
     margin-top: 3rem; 
     background-color: var(--dark-grey); 
     color: var(--white);}
 
+/* Styling for button on My Offers page */
 .btn-primary {
     background-color: var(--orange) ;
     border-color:  var(--orange);
@@ -198,6 +208,7 @@ body {
     box-shadow: 0 0 0 0.25rem var(--dark-grey);
 }
 
+/*  Styling for larger screens  */
 @media only screen and (min-width: 768px) {
     .masthead {
         margin-top: 10px;
