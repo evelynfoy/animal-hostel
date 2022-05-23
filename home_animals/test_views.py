@@ -14,7 +14,7 @@ class TestViews(TestCase):
     def test_guest_list_template(self):
         ''' Test Display Guest List Template'''
         response = self.client.get('/')
-        self.assertTemplateUsed(response, 'index.html')
+        self.assertTemplateUsed(response, 'pages/index.html')
         self.assertTemplateUsed(response, 'base.html')
 
     def test_guest_detail_view(self):
@@ -37,5 +37,16 @@ class TestViews(TestCase):
     def test_offer_list_template(self):
         ''' Test Display Offer List Template'''
         response = self.client.get('/offers/')
-        self.assertTemplateUsed(response, 'offers.html')
+        self.assertTemplateUsed(response, 'pages/offers.html')
+        self.assertTemplateUsed(response, 'base.html')
+
+    def test_offer_add(self):
+        ''' Test Add Offer View '''
+        response = self.client.get('/offer/add/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_offer_add_template(self):
+        ''' Test Display Offer List Template'''
+        response = self.client.get('/offer/add/')
+        self.assertTemplateUsed(response, 'pages/offer_add.html')
         self.assertTemplateUsed(response, 'base.html')
