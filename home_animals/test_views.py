@@ -1,25 +1,25 @@
-'''  Test Views '''
+"""  Test Views """
 from django.test import TestCase
 from django.contrib.auth.models import User
 from .models import AnimalType, Animal, Offer
 
 
 class TestViews(TestCase):
-    '''  Test Views '''
+    """  Test Views """
 
     def test_guest_list(self):
-        ''' Test Display Guest List '''
+        """ Test Display Guest List """
         response = self.client.get('/')
         self.assertEqual(response.status_code, 200)
 
     def test_guest_list_template(self):
-        ''' Test Display Guest List Template'''
+        """ Test Display Guest List Template"""
         response = self.client.get('/')
         self.assertTemplateUsed(response, 'pages/index.html')
         self.assertTemplateUsed(response, 'base.html')
 
     def test_guest_detail_view(self):
-        ''' Test Display Guest Detail View'''
+        """ Test Display Guest Detail View"""
         animal_type = AnimalType.objects.create(code='Cat',
                                                 description='Cat')
         guest = Animal.objects.create(name='Test Guest',
@@ -31,29 +31,29 @@ class TestViews(TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_offer_list(self):
-        ''' Test Display Offer List '''
+        """ Test Display Offer List """
         response = self.client.get('/offers/')
         self.assertEqual(response.status_code, 200)
 
     def test_offer_list_template(self):
-        ''' Test Display Offer List Template'''
+        """ Test Display Offer List Template"""
         response = self.client.get('/offers/')
         self.assertTemplateUsed(response, 'pages/offers.html')
         self.assertTemplateUsed(response, 'base.html')
 
     def test_offer_add(self):
-        ''' Test Add Offer View '''
+        """ Test Add Offer View """
         response = self.client.get('/offer/add/')
         self.assertEqual(response.status_code, 200)
 
     def test_offer_add_template(self):
-        ''' Test Display Offer List Template'''
+        """ Test Display Offer List Template"""
         response = self.client.get('/offer/add/')
         self.assertTemplateUsed(response, 'pages/offer_add.html')
         self.assertTemplateUsed(response, 'base.html')
 
     def test_can_add_offer(self):
-        ''' Test an offer can be added'''
+        """ Test an offer can be added"""
         animal_type = AnimalType.objects.create(code='Cat', description='Cat')
         animal = Animal.objects.create(name='Smokey', slogan='Grey cat',
                                        slug='smokey',
