@@ -74,17 +74,52 @@ This diagram was created using [SmartDraw](https://www.smartdraw.com/entity-rela
 
 ### Existing Features
 
+### Make an Offer
+This page allows the user to make/add an offer for an animal or guest. 
+- The current guests are listed in the dropdown for animal.
+- The pitch area allows users an opportunity to convince the administrator that they over the best home of this animal.
+- The basis field offers a choice of Adoption or Fostering.
+- The weeks field is optional but should be entered for fostering to indicate how long the user would be prepared to foster for.
+- The submit button adds the offer to the database.
+
+![Add Offer](docs/images/MakeAnOffer.jpg)
+
 ### Features Left to Implement
+- A means of allowing users to donate to the hostel.
+
+## Technologies used
+
+### Languages
+* HTML
+* CSS
+* Python
+
+### Libraries & Framework
+* Django
+
+### Tools
+* [Balsamic](https://balsamiq.com/wireframes/ "Balsamic")
+* Google Fonts
+
 
 ## Testing 
+- The complete testing details are contained [here](docs/testing/testing.md "testing").    
+- During testing I discovered that my development db.sqlite3 database had been accidentally pushed to github.     
+  I immediately added it into .gitignore to prevent this re-ocurring, removed it from github using the git rm -r --cached *.sqlite3 command,    
+  commited and pushed this to github/heroku and recycled the API Keys. 
 
 ### Validator Testing 
 
 ### Unfixed Bugs
 
 ## Deployment
+- The complete deployment details are contained [here](docs/deployment.md "deployment").       
 
 ## Credits 
+* [Simen Daehlin](https://github.com/Eventyret "Simen Daehlin") for code inspiration, help and advice.
+* [Stack Overflow](https://stackoverflow.com/ "Stack Overflow") for help and assistance.
+* [Code Institute Open Source Project](https://github.com/Code-Institute-Community/business-analysis-project/ "Code Institute Open Source Project") for inspiration for the pull request template.
+* [Code Institute](https://codeinstitute.net/ie/ "Code Institute") for the starter templates and help and inspiration from the run through projects. 
 
 ### Content 
 
