@@ -27,22 +27,24 @@ description of what the website is about. Users can browse the curent occupancy 
 
 
 ## User Stories
-* Rotating image display: As a site owner I want the home page to display a rotating image of each animal so users will find the site interesting.  
-* Site description: As a site owner I want the home page to explain its purpose so users will immediately get it.
+### As a site owner 
+* I want the home page to display a rotating image of each animal so users will find the site interesting.  
+* I want the home page to explain its purpose so users will immediately get it.
 
-* View guest list: As a Site User I can view a list of animals so that I can select one to take home.
-* Filter on category: As a Site User I can filter the list of animals so that I can see only the relevant ones.
-* See detailed view of animal: As a Site User I can click on a guest so that I can read the full details about them.
+### As a site user 
+* I can view a list of animals so that I can select one to take home.
+* I can filter the list of animals so that I can see only the relevant ones.
+* I can click on a guest so that I can read the full details about them.
+* I can register an account so that I can make offers on animals.
+* I can make an offer to a guest so that I can give them a home.
+* I can see my offers so that I can see the status of each one.
+* I can edit my offers so that I can change the details.
+* I can delete my offers so that I can resend my offer.
 
-* Account registration: As a Site User I can register an account so that I can make offers on animals.
-* Make an offer: As a Site User I can make an offer to a guest so that I can give them a home.
-* View my offers: As a Site User I can see my offers so that I can see the status of each one.
-* Edit my offers: As a Site User I can edit my offers so that I can change the details.
-* Delete my offers: As a Site User I can delete my offers so that I can resend my offer.
-
-* Manage guest list: As a Site Admin I can add, view, update and delete animals so that I can maintain the list.
-* Manage animal type list: As a Site Admin I can add, view, update and delete animal types so that I can maintain them.
-* Approve offers: As a Site Admin I can approve or reject offers so that I can find the right home for each guest.
+### As a site administrator
+* I can add, view, update and delete animals so that I can maintain the list.
+* I can add, view, update and delete animal types so that I can maintain them.
+* I can approve or reject offers so that I can find the right home for each guest.
 
 
 ## Wireframes
