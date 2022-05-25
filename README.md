@@ -104,6 +104,9 @@ This page allows the user to make/add an offer for an animal or guest.
 
 ## Testing 
 - The complete testing details are contained [here](docs/testing/testing.md "testing").    
+- During testing I discovered that my development db.sqlite3 database had been accidentally pushed to github.     
+  I immediately added it into .gitignore to prevent this re-ocurring, removed it from github using the git rm -r --cached *.sqlite3 command,    
+  commited and pushed this to github/heroku and recycled the API Keys. 
 
 ### Validator Testing 
 
