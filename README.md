@@ -72,6 +72,24 @@ This diagram was created using [SmartDraw](https://www.smartdraw.com/entity-rela
 ### ![Models](docs/erd.jpg)    
 &nbsp;  
 
+## Design Choices
+
+
+### Fonts
+I wanted my site to have a simple clean look where the photos of the animals could dominate.
+Therefore I decided to use a basic san-serif font for the text and just use the [Lato](https://fonts.google.com/specimen/Lato "Lato") for the brand name.
+
+### Icons
+I decided to use icons from [Font Awesome](https://fontawesome.com/icons "Font Awesome") where necessary to indicate easily recognisable funtions like delete and    
+for social media.
+
+### Colours
+I decided to keep the website mostly white with light grey backgrounds so the photos could focus the eye but I also wanted one stand out colour that popped    
+and brought the website together so I choose a peppy orange colour for this. I am using the standard bootstrap dark grey colour for most of the text which is white on coloured backgrounds to stand out. Buttons and links use the orange colour.     
+Below is the pallet which I generated using [Colormind](http://colormind.io/ "Colormind"). 
+
+![Colours](docs/images/ColorPalette.jpg "Colours")
+
 ## Features 
 
 ### Existing Features
