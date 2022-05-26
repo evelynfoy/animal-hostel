@@ -69,7 +69,7 @@ class OfferAdd(View):
         id = request.POST.get('animal')
         queryset = Animal.objects
         guest = get_object_or_404(queryset, id=id)
-        slug = str(user) + "-" + guest.name
+        slug = str(user) + "-" + guest.slug
         if offer_form.is_valid():
             offer_form.instance.slug = slug
             offer_form.instance.user = request.user
