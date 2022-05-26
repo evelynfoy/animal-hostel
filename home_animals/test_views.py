@@ -134,7 +134,7 @@ class TestViews(TestCase):
         updated_offer = Offer.objects.get(slug=offer.slug)
         self.assertEqual(updated_offer.pitch, 'changed')
 
-def test_offer_delete(self):
+    def test_offer_delete(self):
         """ Test Delete Offer View """
         animal_type = AnimalType.objects.create(code='Cat', description='Cat')
         animal = Animal.objects.create(name='Smokey', slogan='Grey cat',
@@ -151,3 +151,5 @@ def test_offer_delete(self):
                                      basis='F',
                                      weeks=2)
         response = self.client.get(f'/offer/delete/{offer.slug}')
+
+    
