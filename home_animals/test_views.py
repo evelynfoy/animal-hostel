@@ -87,6 +87,8 @@ class TestViews(TestCase):
                                      basis='F',
                                      weeks=2)
         response = self.client.get(f'/offer/edit/{offer.slug}')
+        self.assertEqual(response.status_code, 200)
+
 
     def test_offer_edit_template(self):
         """ Test Edit Offer Template"""
@@ -151,5 +153,7 @@ class TestViews(TestCase):
                                      basis='F',
                                      weeks=2)
         response = self.client.get(f'/offer/delete/{offer.slug}')
+        self.assertEqual(response.status_code, 200)
+
 
     
