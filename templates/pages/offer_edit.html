@@ -3,15 +3,22 @@
 {% load crispy_forms_tags %}
 
 <div class="container">
-    <div text-center>
-        <h1>Edit Offer</h1>
+    <div class="row">
+        <div class="col-12 mb-3 mt-5 text-center">
+            <h1>Edit Offer</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 mb-3 mt-3">
+            <h3>Guest: {{ offer.animal }}</h3>
+        </div>
     </div>
     <div class="row">
         <div class="col-12">
             <form method="post">
                 {{ offer_form | crispy }}
                 {% csrf_token %}
-                <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                <button type="submit" class="btn btn-signup btn-lg">Save</button>
             </form>
         </div>
     </div>
