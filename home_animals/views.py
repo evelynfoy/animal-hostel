@@ -94,4 +94,14 @@ class OfferEdit(View):
             }
         )
 
-    
+    def post(self, request, slug, *args, **kwargs):
+        queryset = Offer.objects
+        offer = get_object_or_404(queryset, slug=slug)
+        offer_form = OfferForm(request.POST, instance=offer)
+        user = request.user.username
+        if offer_form.is_valid():
+            offer_form.save()
+        else:
+            offer_form = OfferForm(data=request.POST)
+        return redirect('offers')
+

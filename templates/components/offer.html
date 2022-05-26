@@ -2,7 +2,7 @@
     <div class="col-4">
         <div>
             <p>
-                <a href="#" class="guest-link">
+                <a href="{% url 'edit_offer' offer.slug %}" class="guest-link">
                     {{ offer.animal }}
                 </a>
             </p>
@@ -32,8 +32,4 @@
             </p>
         </div>
     </div>
-    
-            
-        <!-- </div>
-    </div> -->
 </div>
