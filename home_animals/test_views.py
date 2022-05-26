@@ -133,3 +133,21 @@ class TestViews(TestCase):
         self.assertRedirects(response, '/offers/')
         updated_offer = Offer.objects.get(slug=offer.slug)
         self.assertEqual(updated_offer.pitch, 'changed')
+
+def test_offer_delete(self):
+        """ Test Delete Offer View """
+        animal_type = AnimalType.objects.create(code='Cat', description='Cat')
+        animal = Animal.objects.create(name='Smokey', slogan='Grey cat',
+                                       slug='smokey',
+                                       type=animal_type,
+                                       description='Smokey is a perfect gentleman of a cat.')
+        user = User.objects.create_user(username='tom',
+                                        email='tom@lyons.com',
+                                        password='tommy')
+        offer = Offer.objects.create(slug=str(user) + "-" + animal.name,
+                                     animal=animal,
+                                     user=user,
+                                     pitch='fgdfh',
+                                     basis='F',
+                                     weeks=2)
+        response = self.client.get(f'/offer/delete/{offer.slug}')
