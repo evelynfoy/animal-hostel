@@ -36,19 +36,6 @@
         </div>
     </div>
 
-    {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-context-center">
-            {% if page_obj.has_previous %}
-            <li><a href="?page={{page_obj.previous_page_number }} " class="page-link">&laquo; PREVIOUS</a></li>
-            {% endif %}
-            {% if page_obj.has_next  %}
-            <li><a href="?page={{page_obj.next_page_number }} " class="page-link">NEXT &laquo;</a></li>
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif %}
-
     <div class="row text-center mt-5 mb-5">
         <scan>Want to take me home? Click
             {% if user.is_authenticated %}
