@@ -108,4 +108,28 @@ class TestViews(TestCase):
         self.assertTemplateUsed(response, 'pages/offer_edit.html')
         self.assertTemplateUsed(response, 'base.html')
 
-    
+    def test_can_edit_offer(self):
+        """ Test an offer can be updated """
+        animal_type = AnimalType.objects.create(code='Cat', description='Cat')
+        animal = Animal.objects.create(name='Smokey', slogan='Grey cat',
+                                       slug='smokey',
+                                       type=animal_type,
+                                       description='Smokey is a perfect gentleman of a cat.')
+        user = User.objects.create_user(username='tom',
+                                        email='tom@lyons.com',
+                                        password='tommy')
+        offer = Offer.objects.create(slug=str(user) + "-" + animal.name,
+                                     animal=animal,
+                                     user=user,
+                                     pitch='fgdfh',
+                                     basis='F',
+                                     weeks=2)
+        self.client.force_login(user=user)
+        response = self.client.post(f'/offer/edit/{offer.slug}',
+                                    {'animal': ['1'],
+                                     'pitch': ['changed'],
+                                     'basis': ['A'],
+                                     'weeks': ['']})
+        self.assertRedirects(response, '/offers/')
+        updated_offer = Offer.objects.get(slug=offer.slug)
+        self.assertEqual(updated_offer.pitch, 'changed')
