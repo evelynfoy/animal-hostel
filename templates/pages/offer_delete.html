@@ -1,0 +1,21 @@
+{% extends 'base.html' %} 
+{% block content %}
+{% load crispy_forms_tags %}
+
+<div class="container">
+    <div text-center>
+        <h1>Delete Offer</h1>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <form method="post">
+                {{ offer_form | crispy }}
+                {% csrf_token %}
+                <button type="submit" class="btn btn-signup btn-lg">Delete</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
