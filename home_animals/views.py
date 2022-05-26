@@ -3,7 +3,7 @@ from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.http import HttpResponseRedirect
 from django.views import View
 from .models import Animal, Offer
-from .forms import OfferForm
+from .forms import OfferCreateForm, OfferEditForm, OfferDeleteForm
 
 
 class GuestList(View):
@@ -59,12 +59,12 @@ class OfferAdd(View):
             request,
             'pages/offer_add.html',
             {
-                "offer_form": OfferForm(),
+                "offer_form": OfferCreateForm(),
             }
         )
 
     def post(self, request, *args, **kwargs):
-        offer_form = OfferForm(data=request.POST)
+        offer_form = OfferCreateForm(data=request.POST)
         user = request.user.username
         id = request.POST.get('animal')
         queryset = Animal.objects
@@ -76,7 +76,7 @@ class OfferAdd(View):
             offer_form.instance.status = 'P'
             offer_form.save()
         else:
-            offer_form = OfferForm(data=request.POST)
+            offer_form = OfferCreateForm(data=request.POST)
         return redirect('offers')
 
 
@@ -85,24 +85,25 @@ class OfferEdit(View):
     def get(self, request, slug, *args, **kwargs):
         queryset = Offer.objects
         offer = get_object_or_404(queryset, slug=slug)
-        offer_form = OfferForm(instance=offer)
+        offer_form = OfferEditForm(instance=offer)
         return render(
             request,
             'pages/offer_edit.html',
             {
                 "offer_form": offer_form,
+                "offer": offer
             }
         )
 
     def post(self, request, slug, *args, **kwargs):
         queryset = Offer.objects
         offer = get_object_or_404(queryset, slug=slug)
-        offer_form = OfferForm(request.POST, instance=offer)
+        offer_form = OfferEditForm(request.POST, instance=offer)
         user = request.user.username
         if offer_form.is_valid():
             offer_form.save()
         else:
-            offer_form = OfferForm(data=request.POST)
+            offer_form = OfferEditForm(data=request.POST)
         return redirect('offers')
 
 
@@ -111,12 +112,13 @@ class OfferDelete(View):
     def get(self, request, slug, *args, **kwargs):
         queryset = Offer.objects
         offer = get_object_or_404(queryset, slug=slug)
-        offer_form = OfferForm(instance=offer)
+        offer_form = OfferDeleteForm(instance=offer)
         return render(
             request,
             'pages/offer_delete.html',
             {
                 "offer_form": offer_form,
+                "offer": offer
             }
         )
 
