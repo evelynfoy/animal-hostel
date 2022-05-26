@@ -18,7 +18,7 @@ class OfferCreateForm(forms.ModelForm):
             'animal': _('Guest'),
             'pitch': _('Why I would make a great owner'),
             'basis': _('Adoption or Fostering'),
-            'weeks': _('If fostering please enter number of weeks:')
+            'weeks': _('If fostering please enter number of weeks (optional):')
         }
 
 
@@ -36,7 +36,7 @@ class OfferEditForm(forms.ModelForm):
         labels = {
             'pitch': _('Why I would make a great owner'),
             'basis': _('Adoption or Fostering'),
-            'weeks': _('If fostering please enter number of weeks:')
+            'weeks': _('If fostering please enter number of weeks (optional):')
         }
 
 
@@ -55,7 +55,7 @@ class OfferDeleteForm(forms.ModelForm):
         labels = {
             'pitch': _('Why I would make a great owner'),
             'basis': _('Adoption or Fostering'),
-            'weeks': _('If fostering please enter number of weeks:')
+            'weeks': _('If fostering please enter number of weeks (optional):')
         }
 
     def __init__(self, *args, **kwargs):
