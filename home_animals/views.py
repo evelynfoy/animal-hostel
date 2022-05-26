@@ -79,3 +79,19 @@ class OfferAdd(View):
             offer_form = OfferForm(data=request.POST)
         return redirect('offers')
 
+
+class OfferEdit(View):
+    """ Edit Offer """
+    def get(self, request, slug, *args, **kwargs):
+        queryset = Offer.objects
+        offer = get_object_or_404(queryset, slug=slug)
+        offer_form = OfferForm(instance=offer)
+        return render(
+            request,
+            'pages/offer_edit.html',
+            {
+                "offer_form": offer_form,
+            }
+        )
+
+    
