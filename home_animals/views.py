@@ -120,3 +120,9 @@ class OfferDelete(View):
             }
         )
 
+    def post(self, request, slug, *args, **kwargs):
+        queryset = Offer.objects
+        offer = get_object_or_404(queryset, slug=slug)
+        offer.delete()
+        return redirect('offers')
+
