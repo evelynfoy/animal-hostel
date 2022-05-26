@@ -87,6 +87,8 @@ class TestViews(TestCase):
                                      basis='F',
                                      weeks=2)
         response = self.client.get(f'/offer/edit/{offer.slug}')
+        self.assertEqual(response.status_code, 200)
+
 
     def test_offer_edit_template(self):
         """ Test Edit Offer Template"""
@@ -133,3 +135,69 @@ class TestViews(TestCase):
         self.assertRedirects(response, '/offers/')
         updated_offer = Offer.objects.get(slug=offer.slug)
         self.assertEqual(updated_offer.pitch, 'changed')
+
+    def test_offer_delete(self):
+        """ Test Delete Offer View """
+        animal_type = AnimalType.objects.create(code='Cat', description='Cat')
+        animal = Animal.objects.create(name='Smokey', slogan='Grey cat',
+                                       slug='smokey',
+                                       type=animal_type,
+                                       description='Smokey is a perfect gentleman of a cat.')
+        user = User.objects.create_user(username='tom',
+                                        email='tom@lyons.com',
+                                        password='tommy')
+        offer = Offer.objects.create(slug=str(user) + "-" + animal.name,
+                                     animal=animal,
+                                     user=user,
+                                     pitch='fgdfh',
+                                     basis='F',
+                                     weeks=2)
+        response = self.client.get(f'/offer/delete/{offer.slug}')
+        self.assertEqual(response.status_code, 200)
+
+    def test_offer_delete_template(self):
+        """ Test Delete Offer View """
+        animal_type = AnimalType.objects.create(code='Cat', description='Cat')
+        animal = Animal.objects.create(name='Smokey', slogan='Grey cat',
+                                       slug='smokey',
+                                       type=animal_type,
+                                       description='Smokey is a perfect gentleman of a cat.')
+        user = User.objects.create_user(username='tom',
+                                        email='tom@lyons.com',
+                                        password='tommy')
+        offer = Offer.objects.create(slug=str(user) + "-" + animal.name,
+                                     animal=animal,
+                                     user=user,
+                                     pitch='fgdfh',
+                                     basis='F',
+                                     weeks=2)
+        response = self.client.get(f'/offer/delete/{offer.slug}')
+        self.assertTemplateUsed(response, 'pages/offer_delete.html')
+        self.assertTemplateUsed(response, 'base.html')
+
+    
+    def test_can_delete_offer(self):
+        """ Test an offer can be deleted """
+        animal_type = AnimalType.objects.create(code='Cat', description='Cat')
+        animal = Animal.objects.create(name='Smokey', slogan='Grey cat',
+                                       slug='smokey',
+                                       type=animal_type,
+                                       description='Smokey is a perfect gentleman of a cat.')
+        user = User.objects.create_user(username='tom',
+                                        email='tom@lyons.com',
+                                        password='tommy')
+        offer = Offer.objects.create(slug=str(user) + "-" + animal.name,
+                                     animal=animal,
+                                     user=user,
+                                     pitch='fgdfh',
+                                     basis='F',
+                                     weeks=2)
+        self.client.force_login(user=user)
+        response = self.client.post(f'/offer/delete/{offer.slug}',
+                                    {'animal': ['1'],
+                                     'pitch': ['changed'],
+                                     'basis': ['A'],
+                                     'weeks': ['']})
+        self.assertRedirects(response, '/offers/')
+        existing_items = Offer.objects.filter(slug=offer.slug)
+        self.assertEqual(len(existing_items), 0)

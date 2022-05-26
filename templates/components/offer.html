@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-4">
+    <div class="col-4 col-sm-3">
         <div>
             <p>
                 <a href="{% url 'edit_offer' offer.slug %}" class="guest-link">
@@ -8,7 +8,7 @@
             </p>
         </div>
     </div>
-    <div class="col-4">
+    <div class="col-4 col-sm-3">
         <div>
             <p>
                 {% if offer.basis == 'A' %}
@@ -19,7 +19,7 @@
             </p>
         </div>
     </div>
-    <div class="col-4">
+    <div class="col-4 col-sm-3">
         <div>
             <p>
                 {% if offer.status == 'P' %}
@@ -31,5 +31,10 @@
                 {% endif %}
             </p>
         </div>
+    </div>
+    <div class="col-4 col-sm-3 text-center">
+        <a href="{% url 'delete_offer' offer.slug %}" class="guest-link">
+            <i class="fa fa-trash" aria-hidden="true"></i>
+        </a>
     </div>
 </div>

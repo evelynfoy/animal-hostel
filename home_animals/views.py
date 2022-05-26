@@ -105,3 +105,24 @@ class OfferEdit(View):
             offer_form = OfferForm(data=request.POST)
         return redirect('offers')
 
+
+class OfferDelete(View):
+    """ Delete Offer """
+    def get(self, request, slug, *args, **kwargs):
+        queryset = Offer.objects
+        offer = get_object_or_404(queryset, slug=slug)
+        offer_form = OfferForm(instance=offer)
+        return render(
+            request,
+            'pages/offer_delete.html',
+            {
+                "offer_form": offer_form,
+            }
+        )
+
+    def post(self, request, slug, *args, **kwargs):
+        queryset = Offer.objects
+        offer = get_object_or_404(queryset, slug=slug)
+        offer.delete()
+        return redirect('offers')
+
