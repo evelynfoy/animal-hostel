@@ -1,7 +1,13 @@
 <div class="col-md-4 col-lg-3">
     <div class="card mb-4">
         <div class="card-body">
+
+            <!--   Guest details wrapped in link to detail screen  -->
+
             <a href=" {% url 'guest_detail' guest.slug %}" class="guest-link">
+
+                <!--   Image  -->
+
                 <div class="image-container">
                     {% if "placeholder" in guest.image.url %}
                     <img class="card-img-top"
@@ -9,14 +15,18 @@
                     {% else %}
                     <img class="card-img-top" src="{{ guest.image.url }}">
                     {% endif %}
+                    <!--   Name and Type  -->
                     <div class="image-flash">
                         <p class="guest">{{ guest.name }} - {{ guest.type }}</p>
                     </div>
                 </div>
             
                 <hr />
+                <!--   Slogan  -->
+
                 <p class="card-text text-muted h6">{{ guest.slogan }}</p>
             </a>
         </div>
+
     </div>
 </div>

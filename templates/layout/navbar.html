@@ -1,44 +1,62 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white">
     <div class="container-fluid">
+        <!-- Logo -->
         <a class="navbar-brand" href="{% url 'home' %}"><span class="brand orange-font">Animal Hostel</span></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
             aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
+        <!-- Nav bar -->
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <!-- Home -->
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                 </li>
+                <!-- Guests -->
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{% url 'home' %}#guests">Guests</a>
                 </li>
+                
                 {% if user.is_authenticated %}
+
+                <!-- My Offers -->
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'offers' %}">My Offers</a>
                 </li>
+                <!-- Logout -->
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                 </li>
+
                 {% else %}
+
+                <!-- Register -->
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
                 </li>
+                <!-- Login -->
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'account_login' %}">Login</a>
                     
                 </li>
                 {% endif %}
             </ul>
+
             {% if user.is_authenticated %}
+            <!-- Username -->
             <span class="navbar-text text-muted">
                 {{ user.username }}
             </span>
             {% else %}
+            <!-- Site mission -->
             <span class="navbar-text text-muted">
                 homes for our furry friends
             </span>
             {% endif %}
+            
         </div>
     </div>
 </nav>

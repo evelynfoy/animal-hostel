@@ -4,6 +4,7 @@
 
 <div class="container">
 
+    <!-- Page Heading -->
     <div class="row">
         <div class="col-12 mt">
             <a id="offers">
@@ -12,33 +13,29 @@
         </div>
     </div>
 
-    <!-- Offers Column -->
+    <!-- Offers Column Headings -->
     <div class="row offers-list" >
         <div class="col-4 col-sm-3">
-            <div>
-                <p>Guest</p>
-            </div>
+            <p>Guest</p>
         </div>
         <div class="col-4 col-sm-3">
-            <div>
-                <p>Basis</p>
-            </div>
+            <p>Basis</p>
         </div>
         <div class="col-4 col-sm-3">
-            <div>
-                <p>Status</p>
-            </div>
+            <p>Status</p>
         </div>
     </div>
+
+    <!-- Offer Lines -->
     <div>
         {% for offer in offers %}
         {% if offer.user == user %}
         {% include "components/offer.html" %}
         {% endif %}
         {% endfor %}
-
     </div>
 
+    <!-- Add button -->
     <div class="row text-center mt-5 mb-5">
         <div class="col-12">
             <a class="btn btn-primary" href="{% url 'add_offer' %}" role="button">Make an offer</a>
