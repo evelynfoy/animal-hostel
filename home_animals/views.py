@@ -70,15 +70,21 @@ class OfferAdd(View):
         queryset = Animal.objects
         guest = get_object_or_404(queryset, id=guest_id)
         slug = str(user) + "-" + guest.slug
-        if offer_form.is_valid():
-            offer_form.instance.slug = slug
-            offer_form.instance.user = request.user
-            offer_form.instance.status = 'P'
-            offer_form.save()
-            messages.add_message(request, messages.SUCCESS,
-                                 'Offer added successfully.')
-        else:
+        offer = Offer.objects.filter(slug=slug)
+        if offer:
+            messages.add_message(request, messages.ERROR,
+                                 'Offer already exists.')
             offer_form = OfferCreateForm(data=request.POST)
+        else:
+            if offer_form.is_valid():
+                offer_form.instance.slug = slug
+                offer_form.instance.user = request.user
+                offer_form.instance.status = 'P'
+                offer_form.save()
+                messages.add_message(request, messages.SUCCESS,
+                                    'Offer added successfully.')
+            else:
+                offer_form = OfferCreateForm(data=request.POST)
         return redirect('offers')
 
 
