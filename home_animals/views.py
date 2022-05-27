@@ -190,6 +190,7 @@ class OfferEdit(View):
                 Request object
                 offer_edit.html template
                 offer_form
+                offer object
         """
         queryset = Offer.objects
         offer = get_object_or_404(queryset, slug=slug)
@@ -199,6 +200,7 @@ class OfferEdit(View):
             'pages/offer_edit.html',
             {
                 "offer_form": offer_form,
+                "offer": offer,
             }
         )
 
@@ -257,6 +259,7 @@ class OfferDelete(View):
                 Request object
                 offer_delete.html template
                 offer_form
+                offer object
         """
         queryset = Offer.objects
         offer = get_object_or_404(queryset, slug=slug)
@@ -266,6 +269,7 @@ class OfferDelete(View):
             'pages/offer_delete.html',
             {
                 "offer_form": offer_form,
+                "offer": offer,
             }
         )
 
