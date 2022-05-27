@@ -1,37 +1,39 @@
 <div class="row">
+
+    <!--   Link to offer --> 
     <div class="col-4 col-sm-3">
-        <div>
-            <p>
-                <a href="{% url 'edit_offer' offer.slug %}" class="guest-link">
-                    {{ offer.animal }}
-                </a>
-            </p>
-        </div>
+        <p>
+            <a href="{% url 'edit_offer' offer.slug %}" class="guest-link">
+                {{ offer.animal }}
+            </a>
+        </p>
     </div>
+
+    <!-- Basis Column-->
     <div class="col-4 col-sm-3">
-        <div>
-            <p>
-                {% if offer.basis == 'A' %}
-                {{ 'Adoption' }}
-                {% else %}
-                {{ 'Fostering' }}
-                {% endif %}
-            </p>
-        </div>
+        <p>
+            {% if offer.basis == 'A' %}
+            {{ 'Adoption' }}
+            {% else %}
+            {{ 'Fostering' }}
+            {% endif %}
+        </p>
     </div>
+
+    <!-- Status Column-->
     <div class="col-4 col-sm-3">
-        <div>
-            <p>
-                {% if offer.status == 'P' %}
-                {{ 'Pending' }}
-                {% elif offer.status == 'A' %}
-                {{ 'Approved' }}
-                {% else %}
-                {{ 'Rejected' }}
-                {% endif %}
-            </p>
-        </div>
+        <p>
+            {% if offer.status == 'P' %}
+            {{ 'Pending' }}
+            {% elif offer.status == 'A' %}
+            {{ 'Approved' }}
+            {% else %}
+            {{ 'Rejected' }}
+            {% endif %}
+        </p>
     </div>
+
+    <!-- Delete Icon-->
     <div class="col-4 col-sm-3 text-center">
         <a href="{% url 'delete_offer' offer.slug %}" class="guest-link">
             <i class="fa fa-trash" aria-hidden="true"></i>
