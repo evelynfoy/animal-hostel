@@ -23,18 +23,6 @@ body {
     color: var(--orange);
 }
 
-.social {
-    text-align: right;
-}
-
-.thin {
-    font-weight: 300;
-}
-
-.light-bg {
-    background-color: var(--white) ;
-}
-
 .dark-bg {
     background-color: var(--dark-grey);
 }
@@ -66,32 +54,32 @@ body {
     background-color: var(--orange);
 }
 
+.messages {
+    background-color: var(--orange);
+    color:var(--white)
+}
+
+/* Styling for Guest Details page */
+
+.masthead-text {
+    background-color: var(--dark-grey);
+    color: white;
+    position: relative;
+}
+
 .guest {
     color: var(--white);
     margin: 4px;
     text-transform: uppercase;
 }
 
-.masthead-text {
-    background-color: #445261;
-    color: white;
-    position: relative;
-}
-
-
-
-.page-link {
-    color: var(--orange);
-}
-
 .guest-link {
     text-decoration: none;
-    color: #445261;
+    color: var(--dark-grey);
 }
 
-.guest-link:hover,
-.page-link {
-    color: #E84610;
+.guest-link:hover {
+    color: var(--orange);
 }
 
 .guest-name {
@@ -103,40 +91,6 @@ body {
     margin-left: 5%;
     color: lightgray;
 }
-
-/* -- Styling for My Offers page - default class used by crispy forms -- */
-
-.control-group {
-    margin-bottom: 1rem;
-}
-
-.btn-signup {
-    
-    background-color: var(--orange);
-    color: var(--white);
-    border-color:  var(--orange);
-    margin-top: 2rem;
-}
-
-.btn-signup:hover,
-.btn-signup:active {
-    background-color: var(--white);
-    color: var(--orange);
-    border-color: var(--orange);
-}
-
-.link {
-    color: var(--orange);
-    text-decoration: none;
-}
-
-.link:hover,
-.link:active {
-    color: var(--orange);
-    text-decoration: underline;
-    font-weight: bold;
-}
-
 
 /* -- Carousel Styling -- */
 
@@ -168,12 +122,44 @@ body {
     margin-left: 45%;
 }
 
-/* -- Styling for My Offers Page -- */
+/* -- Styling for Sign-up Buttons -- */
+
+.btn-signup {
+    
+    background-color: var(--orange);
+    color: var(--white);
+    border-color:  var(--orange);
+    margin-top: 2rem;
+}
+
+.btn-signup:hover,
+.btn-signup:active {
+    background-color: var(--white);
+    color: var(--orange);
+    border-color: var(--orange);
+}
+
+/* -- Styling for My Offers page -- */
 
 .offers-list {
     margin-top: 3rem; 
     background-color: var(--dark-grey); 
     color: var(--white);}
+
+
+.link {
+    color: var(--orange);
+    text-decoration: none;
+}
+
+.link:hover,
+.link:active {
+    color: var(--orange);
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+
 
 /* Styling for button on My Offers page */
 .btn-primary {
@@ -208,7 +194,11 @@ body {
     box-shadow: 0 0 0 0.25rem var(--dark-grey);
 }
 
-/* Social Links */
+/* Social Media Links */
+
+.social {
+    text-align: right;
+}
 
 .sociallink {
     color: var(--white);
@@ -220,11 +210,6 @@ body {
     color: var(--white);
     text-decoration: none;
     font-weight: bold;
-}
-
-.messages {
-    background-color: var(--orange);
-    color:var(--white)
 }
 
 /*  Styling for larger screens  */
