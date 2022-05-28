@@ -37,18 +37,27 @@
     </div>
 
     <!-- Link -->
+    
     <div class="row text-center mt-5 mb-5">
-        <scan>Want to take me home? Click
-            {% if user.is_authenticated %}
-
-            <!-- Link to offers page -->
-            <a class="link" href="offers/">here</a> to make an offer.
-            {% else %}
+        <div class="col-12 col-sm-6 text-sm-end">
+            <p class="text-sm-right">
+                Want to take me home?
+            </p>
             
-            <!-- Link to register page -->
-            <a class="link" href="accounts/signup">here</a> to register.
-            {% endif %}
-        </scan>
+        </div>
+        <div class="col-12 col-sm-6 text-sm-start">
+            <p>Click
+                {% if user.is_authenticated %}
+    
+                <!-- Link to offers page -->
+                <a class="link" href="{% url 'offers' %}">here</a> to make an offer.
+                {% else %}
+    
+                <!-- Link to register page -->
+                <a class="link" href="accounts/signup">here</a> to register.
+                {% endif %}
+            </p>
+        </div>
     </div>
 
 </div>

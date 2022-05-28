@@ -11,9 +11,9 @@
                 <div class="image-container">
                     {% if "placeholder" in guest.image.url %}
                     <img class="card-img-top"
-                        src="https://res.cloudinary.com/efcloud12/image/upload/v1652774377/placeholder_osn1os.jpg">
+                        src="https://res.cloudinary.com/efcloud12/image/upload/v1652774377/placeholder_osn1os.jpg" alt="Placeholder Image">
                     {% else %}
-                    <img class="card-img-top" src="{{ guest.image.url }}">
+                    <img class="card-img-top" src="{{ guest.image.url }}" alt="Image of Animal">
                     {% endif %}
                     <!--   Name and Type  -->
                     <div class="image-flash">

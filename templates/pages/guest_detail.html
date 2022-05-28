@@ -14,9 +14,9 @@
             <!-- Image or placeholder image -->
             <div class="col-12 col-md-6 masthead-image">
                 {% if "placeholder" in guest.image.url %}
-                <img src="https://res.cloudinary.com/efcloud12/image/upload/v1652774377/placeholder_osn1os.jpg" width="100%">
+                <img src="https://res.cloudinary.com/efcloud12/image/upload/v1652774377/placeholder_osn1os.jpg" width="100%" alt="Placeholder Image">
                 {% else %}
-                <img src="{{ guest.image.url  }} " width="100%">
+                <img src="{{ guest.image.url  }}" width="100%" alt="Image of Animal">
                 {% endif %}
             </div>
 
@@ -42,10 +42,13 @@
 <!-- Link -->
 <div class="row text-center mt-5 mb-5">
     <div class="col-12 col-sm-6 text-sm-end">
-        <scan class="text-sm-right">Want to take me home?</scan>
+        <p class="text-sm-right">
+            Want to take me home?
+        </p>
+        
     </div>
     <div class="col-12 col-sm-6 text-sm-start">
-        <scan>Click
+        <p>Click
             {% if user.is_authenticated %}
 
             <!-- Link to offers page -->
@@ -55,7 +58,7 @@
             <!-- Link to register page -->
             <a class="link" href="accounts/signup">here</a> to register.
             {% endif %}
-        </scan>
+        </p>
     </div>
 </div>
 

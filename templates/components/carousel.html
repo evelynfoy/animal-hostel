@@ -19,7 +19,7 @@
                 {% if forloop.first %}
                 <div class="carousel-item active">
                     {% if "placeholder" in guest.image.url %}
-                    <img src="https://res.cloudinary.com/efcloud12/image/upload/v1652774377/placeholder_osn1os.jpg">
+                    <img src="https://res.cloudinary.com/efcloud12/image/upload/v1652774377/placeholder_osn1os.jpg" alt="Placeholder Image">
                     {% else %}
                     <img src="{{ guest.image.url }}"
                         alt="Image of Animal">
@@ -28,7 +28,7 @@
                 {% else %}
                 <div class="carousel-item">
                     {% if "placeholder" in guest.image.url %}
-                    <img src="https://res.cloudinary.com/efcloud12/image/upload/v1652774377/placeholder_osn1os.jpg">
+                    <img src="https://res.cloudinary.com/efcloud12/image/upload/v1652774377/placeholder_osn1os.jpg" alt="Placeholder Image">
                     {% else %}
                     <img src="{{ guest.image.url }}"
                         alt="Image of Animal">
