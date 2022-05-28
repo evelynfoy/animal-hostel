@@ -1,20 +1,20 @@
 # Animal Hostel
 
 Animal Hostel is a website that enables people to offer a home to a homeless animal. The home page shows photos of the animals currently at the hostel as well as a short
-description of what the website is about. Users can browse the curent occupancy but to make an offer they need to register and login. Once logged in they can view, edit or delete their offers as well as see the status of the offers. They can also specify whether their interest is in fostering or adopting. The goal of the site is to find owners
+description of what the website is about. Users can browse the current occupancy but to make an offer they need to register and log in. Once logged in they can view, edit or delete their offers as well as see the status of the offers. They can also specify whether their interest is in fostering or adopting. The goal of the site is to find owners
 for these poor unfortunate homeless animals. The administrator can add and maintain the animals and approve or reject the offers.
 
  ![Am I responsive](docs/images/am-i-responsive.png) 
 
-## Site Owners Goals
+## Site Owner’s Goals
 * The site looks good visually.
 * The site is responsive.
 * The site is accessible.
-* The site is eaily navigable.
+* The site is easily navigable.
 * The site displays the animals at the hostel.
 * The site provides the means for users to offer homes for the animals.
 
-## Site Administrators Goals
+## Site Administrator’s Goals
 * To be able to add and maintain a list of animals.
 * To be able to approve or reject offers made.
 * To be able to maintain the animal types.
@@ -114,11 +114,11 @@ I wanted my site to have a simple clean look where the photos of the animals cou
 Therefore I decided to use a basic san-serif font for the text and just use the [Lato](https://fonts.google.com/specimen/Lato "Lato") for the brand name.
 
 ### Icons
-I decided to use icons from [Font Awesome](https://fontawesome.com/icons "Font Awesome") where necessary to indicate easily recognisable funtions like delete and    
+I decided to use icons from [Font Awesome](https://fontawesome.com/icons "Font Awesome") where necessary to indicate easily recognizable functions like delete and    
 for social media.
 
 ### Colours
-I decided to keep the website mostly white with light grey backgrounds so the photos could focus the eye but I also wanted one stand out colour that popped    
+I decided to keep the website mostly white with light grey backgrounds so the photos could focus the eye but I also wanted one stand-out colour that popped    
 and brought the website together so I choose a peppy orange colour for this. I am using the standard bootstrap dark grey colour for most of the text which is white on coloured backgrounds to stand out. Buttons and links use the orange colour.     
 Below is the pallet which I generated using [Colormind](http://colormind.io/ "Colormind"). 
 
@@ -135,9 +135,9 @@ Once signed in the My Offers page becomes available from where users can view, a
 
 ### Navigation Bar
 - Featured at the top of the page, the fully responsive navigation bar includes links to the available pages.
-- If signed in the avaiable links are Home, Guests, My Offers and Logout.
-- If siigned in the available links are Home, Guests, Register and Login.
-- Also, if signd in the user name appears on the right of the navigation bar.
+- If signed in the available links are Home, Guests, My Offers and Logout.
+- If signed in the available links are Home, Guests, Register and Login.
+- Also, if signed in the user name appears on the right of the navigation bar.
 - If not signed in the site mission appears on the right instead. 
 - On small screens the navigation bar appears as a hamburger icon which expands when clicked.
 
@@ -248,8 +248,8 @@ This page allows the user to make/add an offer for an animal or guest.
 ## Testing 
 - The complete testing details are contained [here](docs/testing.md "testing").    
 - During testing I discovered that my development db.sqlite3 database had been accidentally pushed to github.     
-  I immediately added it into .gitignore to prevent this re-ocurring, removed it from github using the `git rm -r --cached *.sqlite3` command,    
-  commited and pushed this to github/heroku and recycled the API Keys. 
+  I immediately added it into .gitignore to prevent this re-occurring, removed it from github using the `git rm -r --cached *.sqlite3` command,    
+  committed and pushed this to github/heroku and recycled the API Keys. 
 - The results of running my automatic tests are [here](docs/images/AutomaticTests.jpg "tests")
 - The branches created for this implementation have not been deleted as they normally would to demonstrate their use in the project.
 
