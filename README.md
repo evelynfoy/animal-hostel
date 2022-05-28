@@ -256,13 +256,13 @@ This page allows the user to make/add an offer for an animal or guest.
 ### Validator Testing 
 - HTML
   - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fanimals-hostel.herokuapp.com%2F)
-  - See [Results](docs/images/HTMLValidatorIndex.png)
+  - See [Results](docs/images/html-validator-index.png)
 - CSS
   - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fanimals-hostel.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
   - See [Results](docs/images/css-validator.png)
 - Lighthouse Report
     - Accessibility score 94
-    - See [Results](docs/images/lightHouse-result.png)
+    - See [Results](docs/images/lighthouse-result.png)
 
 ### Unfixed Bugs
 - If you register and specify an email you will receive two flash messages only one of which disappears.
