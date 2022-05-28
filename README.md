@@ -228,6 +228,11 @@ This page allows the user to make/add an offer for an animal or guest.
 ### Features Left to Implement
 - A means of allowing users to donate to the hostel.
 - USER STORY: Filter on category #4
+- It would be preferable to have a separate page implemented for the administrator functions 
+  where they can maintain the types and animals and set the status of offers without having 
+  to use the django administration screens.
+- It would be nice to be able to filter on other sub categories also like small dogs or older cats.
+- It would also be nice to sign up for an email alert if certain animals of interest to a user get added.
 
 ## Technologies used
 
@@ -241,7 +246,7 @@ This page allows the user to make/add an offer for an animal or guest.
 
 ### Tools
 * [Balsamic](https://balsamiq.com/wireframes/ "Balsamic")
-* Google Fonts
+* [Google Fonts](https://fonts.google.com/ "Google Fonts")
 * [Font Awesome](https://fontawesome.com/ "Font Awesome icons" )
 
 
@@ -256,13 +261,13 @@ This page allows the user to make/add an offer for an animal or guest.
 ### Validator Testing 
 - HTML
   - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fanimals-hostel.herokuapp.com%2F)
-  - See [Results](docs/images/HTMLValidatorIndex.png)
+  - See [Results](docs/images/html-validator-index.png)
 - CSS
   - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fanimals-hostel.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
   - See [Results](docs/images/css-validator.png)
 - Lighthouse Report
     - Accessibility score 94
-    - See [Results](docs/images/lightHouse-result.png)
+    - See [Results](docs/images/lighthouse-result.png)
 
 ### Unfixed Bugs
 - If you register and specify an email you will receive two flash messages only one of which disappears.

@@ -9,6 +9,7 @@
 - I will include a bootstrap carousel of the images loaded for each animal added to the database.
 
 #### Implementation
+- I created a branch for the user story - USER STORY: Rotating image display #1 Pull Request #25
 - I added a template to the components folder for the carousel.
 - I used the list of animal objects passed into the index.html template from the GuestList view to loop through
   each animal and display its image.
@@ -35,6 +36,7 @@
 - I will include a site description on the home page under the carousel.
 
 #### Implementation
+- I created a branch for the user story - USER STORY: Site description #2 Pull Request #28
 - I added a template to the components folder for the site description.
 - I added a text area explaning the sites purpose.
 - I added a heading welcoming users to the site
